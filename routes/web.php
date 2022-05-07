@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('layouts.dashboard');
 });
 
 Route::get('/fengshui', function () {
     return view('layouts.fengshui');
 });
 
+Route::get('/warigabelog', function () {
+    return view('layouts.wariga');
+});
