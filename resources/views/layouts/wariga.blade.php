@@ -30,15 +30,26 @@
 @endsection
 @section('content')
 
-<h1>Wariga</h1>
-<h1>Wariga</h1>
-<h1>Wariga</h1>
-<h1>Wariga</h1>
-<h1>Wariga</h1>
-<h1>Wariga</h1>
-<h1>Wariga</h1>
-<h1>Wariga</h1>
-
+<h2 class="px-4 py-3" >Wariga</h2>
+<form>
+  <div class="px-4 py-3">
+    <label for="tanggal_lahir" class="col-sm-2 col-form-label" >
+      Tanggal Lahir
+    </label>
+    <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form_control">
+  </div>
+  <div class="px-4 py-3">
+    <label for="tanggal_baik" class="col-sm-2 col-form-label" >
+      Tanggal Hari Baik
+    </label>
+    <input type="date" name="tanggal_baik" id="tanggal_baik" class="form_control">
+  </div>
+  <div class="px-4 py-3">
+  <button type="button" class="btn btn-primary btn-lg btn-block">
+      NEXT
+    </button>
+  </div>
+</form>
 
 
     

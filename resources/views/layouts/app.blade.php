@@ -33,6 +33,8 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
+  <link href="../assets/img.css" rel="stylesheet" />
+  @yield('head')
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
