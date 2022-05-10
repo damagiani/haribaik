@@ -7308,7 +7308,7 @@ fieldset:disabled .btn {
 
 .carousel-inner {
   position: relative;
-  width: 50%;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -21720,6 +21720,11 @@ hr.horizontal {
 hr.horizontal.light {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0));
 }
+
+hr.horizontal.gelap {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+}
+
 
 hr.horizontal.dark {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));

@@ -1,4 +1,11 @@
 @extends('layouts.app')
+@section('tulisanpages')
+<ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+  <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
+  <li class="breadcrumb-item text-sm text-white active" aria-current="page">Wariga Belog</li>
+</ol>
+<h6 class="font-weight-bolder text-white mb-0">Wariga Belog</h6>
+@endsection
 
 @section('active')
 <ul class="navbar-nav">
@@ -30,27 +37,32 @@
 @endsection
 @section('content')
 
-<h2 class="px-4 py-3" >Wariga</h2>
-<form>
-  <div class="px-4 py-3">
-    <label for="tanggal_lahir" class="col-sm-2 col-form-label" >
-      Tanggal Lahir
-    </label>
-    <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form_control">
-  </div>
-  <div class="px-4 py-3">
-    <label for="tanggal_baik" class="col-sm-2 col-form-label" >
-      Tanggal Hari Baik
-    </label>
-    <input type="date" name="tanggal_baik" id="tanggal_baik" class="form_control">
-  </div>
-  <div class="px-4 py-3">
+<div class="card mb-4">
+<h2 class="px-4 py-3" style="margin-left: 20px" >Wariga Belog</h2>
+<hr class="horizontal gelap mt-0" style="margin-bottom: 30px">
+
+  <form class="row" style="margin-left: 30px; margin-bottom: 40px">
+    <label for="date" class="col-2 col-form-label">Tanggal Lahir</label>
+    <div class="col-5">
+      <div class="input-group date" id="datepicker">
+        <input type="date" class="form-control" id="date"/>
+      </div>
+    </div>
+  </form>
+  <form class="row" style="margin-left: 30px; margin-bottom: 30px">
+    <label for="date" class="col-2 col-form-label">Hari Pilihan</label>
+    <div class="col-5">
+      <div class="input-group date" id="datepicker">
+        <input type="date" class="form-control" id="date"/>
+      </div>
+    </div>
+  </form>
+  <div class="px-4 py-3" style="margin-left: 20px">
   <button type="button" class="btn btn-primary btn-lg btn-block">
-      NEXT
+      HASIL
     </button>
   </div>
-</form>
-
+</div>
 
     
 @endsection
