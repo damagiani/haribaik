@@ -15,7 +15,16 @@ class CreateRiwayatwarigasTable extends Migration
     {
         Schema::create('riwayatwarigas', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->date('tanggal_lahir');
+            $table->date('tanggal_pilihan');
+            $table->bigInteger('caturbekel_id')->unsigned();
+            $table->bigInteger('dauh_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('caturbekel_id')->references('id')->on('caturbekels') ->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('dauh_id')->references('id')->on('dauhs') ->onDelete('cascade')->onUpdate('cascade');
+
         });
     }
 
@@ -29,3 +38,4 @@ class CreateRiwayatwarigasTable extends Migration
         Schema::dropIfExists('riwayatwarigas');
     }
 }
+

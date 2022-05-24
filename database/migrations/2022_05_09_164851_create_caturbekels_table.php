@@ -15,7 +15,8 @@ class CreateCaturbekelsTable extends Migration
     {
         Schema::create('caturbekels', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('bagian');
+            $table->string('deskripsi');
         });
     }
 
