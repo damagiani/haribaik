@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appold')
 
 @section('head')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -14,14 +14,18 @@
 <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
 @endsection
 
+@section('backgroundheader')
+<div class="min-height-300 bg-primary position-absolute w-100"></div>
+@endsection
+
 @section('active')
 <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link active" href="../">
+      <a class="nav-link active" href="/home">
         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
           <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
         </div>
-        <span class="nav-link-text ms-1">Dashboard</span>
+        <span class="nav-link-text ms-1">About</span>
       </a>
     </li>
     <li class="nav-item">
@@ -53,26 +57,26 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner border-radius-lg h-100" >
+      <div class="carousel-item">
+        <img src="../assets/img/China3.jpg" class="img-fluid" alt="" >
+        <div class="carousel-caption d-none d-md-block" style="margin-bottom: 120px; ">
+          <h1  style="color: white; height:60px;">Aplikasi WangShui</h1>
+        <h5 style="color: white"><span style="color: #FFCC00">WangShui </span> adalah aplikasi yang digunakan untuk melakukan perhitungan wariga belog dan fengshui</h5>
+      </div>
+      </div>
       <div class="carousel-item active">
         <img src="../assets/img/Dashboard1.jpg" class="img-fluid" alt="" >
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+        <div class="carousel-caption d-none d-md-block" style="margin-bottom: 90px; ">
+            <h1  style="color: white; height:60px;">Fengshui</h1>
+          <h5 style="color: white"><span style="color: #FFCC00">Fengshui</span> merupakan adalah ilmu topografi kuno dari Cina yang mengatur penataan bangunan, ruang dan benda</h5>
         </div>
       </div>
       <div class="carousel-item">
         <img src="../assets/img/Bali2.jpg" class="img-fluid" alt="" >
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
+        <div class="carousel-caption d-none d-md-block" style="margin-bottom: 90px; ">
+          <h1  style="color: white; height:60px;">Wariga Belog</h1>
+        <h5 style="color: white">Wariga Belog atau <span style="color: #FFCC00">Behavior Environtmental Logos</span> merupakan salah satu konsep perhitungan hari baik berdasarkan perhitungan urip alam dan individu</h5>
       </div>
-      <div class="carousel-item">
-        <img src="../assets/img/China3.jpg" class="img-fluid" alt="" >
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
       </div>
     </div>
   </div>

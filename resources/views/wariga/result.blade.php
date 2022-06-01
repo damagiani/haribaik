@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appold')
 @section('tulisanpages')
 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
   <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
@@ -6,15 +6,20 @@
 </ol>
 <h6 class="font-weight-bolder text-white mb-0">Wariga Belog</h6>
 @endsection
+@section('backgroundheader')
+<div class="position-absolute w-100 min-height-300 top-0" style="background-image: url('{{ URL::asset('assets/img/headbali.jpg') }}'); background-position-y: 50%;">
+  <span class="mask bg-primary opacity-6"></span>
+</div>
+@endsection
 
 @section('active')
 <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="/">
+      <a class="nav-link" href="/home">
         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
           <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
         </div>
-        <span class="nav-link-text ms-1">Dashboard</span>
+        <span class="nav-link-text ms-1">About</span>
       </a>
     </li>
     <li class="nav-item active">
@@ -71,7 +76,7 @@
             <div class="numbers">
               <p class="text-sm mb-0 text-uppercase font-weight-bold">05.30 - 07.45</p>
               <h5 class="font-weight-bolder">
-                Siang
+                SIANG
               </h5>
               <p class="mb-0">
                 {{$dauh->siang_a}}
@@ -299,15 +304,11 @@
         <div class="row">
             <div class="numbers">
               <h5 class="font-weight-bolder">
-                <span class="text-success">Kesimpulan</span>
-                Waktu :
+                <span class="text-success">Catatan :</span>
               </h5>
               <hr class="horizontal gelap mt-0" style="margin-bottom: 10px">
-              <h5 class="font-weight-bolder">
-                MALAM
-              </h5>
               <p class="mb-0">
-                {{$dauh->malam_e}}
+                Waktu yang disajikan menunjukan dari waktu-waktu yang baik di hari yang telah dipilih
               </p>
             </div>
           
@@ -328,8 +329,30 @@
 <h2 class="px-4 py-3" style="margin-left: 20px" >{{$hari_baik->bagian}}</h2>
 <hr class="horizontal gelap mt-0" style="margin-bottom: 30px">
 
+  <div class="row" style="margin-left: 30px; margin-bottom: 40px; margin-right:40px;">
+    <h4 class="px-4 py-3" style="margin-left: 20px; margin-right:40px;" >{{$hari_baik->deskripsi}}</h2>
+  </div>
+  <h3 class="px-4 py-3" style="margin-left: 20px" >Pangarasan (Sifat)</h3>
+  <hr class="horizontal gelap mt-0" style="margin-bottom: 30px">
   <div class="row" style="margin-left: 30px; margin-bottom: 40px">
-    <h4 class="px-4 py-3" style="margin-left: 20px" >{{$hari_baik->deskripsi}}</h2>
+    <h5 class="px-4 py-3" style="margin-left: 20px" >{{$pangarasancek->sifat}}</h5>
+  </div>
+  <h3 class="px-4 py-3" style="margin-left: 20px" >Pancasudha (Sifat)</h3>
+  <hr class="horizontal gelap mt-0" style="margin-bottom: 30px">
+  <div class="row" style="margin-left: 30px; margin-bottom: 40px">
+    <h5 class="px-4 py-3" style="margin-left: 20px" >{{$pancasudhacek->sifat}}</h5>
+  </div>
+  <h3 class="px-4 py-3" style="margin-left: 20px" >Keputusan untuk bepergian</h3>
+  <hr class="horizontal gelap mt-0" style="margin-bottom: 30px">
+  <div class="row" style="margin-left: 30px; margin-bottom: 40px">
+    <h5 class="px-4 py-3" style="margin-left: 20px" >{{$berpergiancek->keterangan}}</h5>
+  </div>
+  <h3 class="px-4 py-3" style="margin-left: 20px" >Sandang Pangan</h3>
+  <hr class="horizontal gelap mt-0" style="margin-bottom: 30px">
+  <div class="row" style="margin-left: 30px; margin-bottom: 40px">
+    @foreach ($sandangpangancek as $sandangpangan)
+      <h5 class="px-4 py-3" style="margin-left: 20px" ><span class="text-success">Umur {{$sandangpangan->dari_umur}}-{{$sandangpangan->sampai_umur}} </span> : {{$sandangpangan->keterangan}}</h5>
+    @endforeach
   </div>
 
   <div class="px-4 py-3" style="margin-left: 20px">

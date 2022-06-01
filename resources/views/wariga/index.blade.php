@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.appold')
+
 @section('tulisanpages')
 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
   <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
@@ -6,15 +7,20 @@
 </ol>
 <h6 class="font-weight-bolder text-white mb-0">Wariga Belog</h6>
 @endsection
+@section('backgroundheader')
+<div class="position-absolute w-100 min-height-300 top-0" style="background-image: url('{{ URL::asset('assets/img/headbali.jpg') }}'); background-position-y: 50%;">
+  <span class="mask bg-primary opacity-6"></span>
+</div>
+@endsection
 
 @section('active')
 <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="../">
+      <a class="nav-link" href="/home">
         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
           <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
         </div>
-        <span class="nav-link-text ms-1">Dashboard</span>
+        <span class="nav-link-text ms-1">About</span>
       </a>
     </li>
     <li class="nav-item active">
@@ -43,11 +49,11 @@
 
 <div class="card-body">
     <a href="{{ route('warigabelog.create') }}" class="btn btn-md btn-success mb-3">TAMBAH PERHITUNGAN</a>
+    <a href="{{ route('warigabelog.cetak') }}" class="btn btn-md btn-danger mb-3">CETAK RIWAYAT</a>
     <div class="table-responsive">
-      <table class="table align-items-center mb-0">
+      <table class="table align-items-center mb-0" id="riwayatwariga">
         <thead>
           <tr>
-            <th scope="col">NAMA</th>
             <th scope="col">TANGGAL LAHIR</th>
             <th scope="col">TANGGAL PILIHAN</th>
             <th class="text-center" scope="col">AKSI</th>
@@ -56,7 +62,6 @@
         <tbody>
             @forelse ($warigas as $wariga)
               <tr>
-                  <td>{{ $wariga->nama}}</td>
                   <td>{{ $wariga->tanggal_lahir }}</td>
                   <td>{{ $wariga->tanggal_pilihan }}</td>
                   <td class="text-center">
@@ -83,3 +88,6 @@
 
     
 @endsection
+
+
+    
